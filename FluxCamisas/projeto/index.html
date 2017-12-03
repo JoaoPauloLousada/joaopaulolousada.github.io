@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FluxogramaCamisas</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body style="background-color:rgba(206,209,198,0.05);">
+    <div class="container col-form">
+        <div class="row">
+            <div class="col-md-12 preco">
+                    <h2>Valor</h2>
+                    <h4>R$</h4>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 ">
+                
+                <form method="POST" onSubmit="return isValid()">
+                    <div class="row tipo">
+                        <div class="col-md-12">
+                            <h1 style="background-color:transparent;">Tipo </h1></div>
+                        <div class="col-md-4" name="divMasc" onclick="abrirCamada('largura','tipo')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa masculina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="CamisaMasculina"
+                            data-valor="21.90">
+                                <figcaption> Masculina </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="CamisaMasculina" value="CamisaMasculina" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('largura','tipo')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa feminina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="CamisaFeminina" data-valor="21.90">
+                                <figcaption>Feminina </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="CamisaFeminina" value="CamisaFeminina" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('largura','tipo')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/Camisa unissex.jpg" data-bs-hover-animate="pulse" id="masc" data-target="CamisaUnissex" data-valor="21.90">
+                                <figcaption>Unissex </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="CamisaUnissex" value="CamisaUnissex" hidden>
+                        </div>
+                    </div>
+                    <div class="row B largura">
+                        <div class="col-md-12" >
+                            <h1 style="background-color:transparent;">Largura </h1></div>
+                        <div class="col-md-4" onclick="abrirCamada('comprimento','largura')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa masculina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="slim" data-valor="1.90">
+                                <figcaption>Slim </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="slim" value="slim" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('comprimento','largura')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa feminina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="classica" data-valor="0">
+                                <figcaption>Classica </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="classica" value="classica" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('comprimento','largura')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/Camisa unissex.jpg" data-bs-hover-animate="pulse" id="masc" data-target="extra" data-valor="3.90">
+                                <figcaption>Extra </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="extra" value="extra" hidden>
+                        </div>
+                    </div>
+                    <div class="row B comprimento">
+                        <div class="col-md-12">
+                            <h1 style="background-color:transparent;">Comprimento </h1></div>
+                        <div class="col-md-4" onclick="abrirCamada('barra', 'comprimento')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa masculina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="tradicional" data-valor="0">
+                                <figcaption>tradicional </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="tradicional" value="tradicional" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('barra', 'comprimento')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa feminina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="long" data-valor="2.90">
+                                <figcaption>long </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="long" value="long" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('barra', 'comprimento')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/Camisa unissex.jpg" data-bs-hover-animate="pulse" id="masc" data-target="over" data-valor="3.90">
+                                <figcaption>over </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="over" value="over" hidden>
+                        </div>
+                    </div>
+                    <div class="row B barra">
+                        <div class="col-md-12">
+                            <h1 style="background-color:transparent;">Barra </h1></div>
+                        <div class="col-md-4" onclick="abrirCamada('detBara', 'barra')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa masculina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="reta" data-valor="0">
+                                <figcaption>reta </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="reta" value="reta" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('detBara', 'barra')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa feminina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="abaulada" data-valor="1">
+                                <figcaption>abaulada </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="abaulada" value="abaulada" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('detBara', 'barra')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/Camisa unissex.jpg" data-bs-hover-animate="pulse" id="masc" data-target="tranversal" data-valor="1.90">
+                                <figcaption>tranversal </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="tranversal" value="tranversal" hidden>
+                        </div>
+                    </div>
+                    <div class="row B detBara">
+                        <div class="col-md-12">
+                            <h1 style="background-color:transparent;">Detalhe da Barra</h1></div>
+                        <div class="col-md-4" onclick="abrirCamada('acabamento', 'detBara')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa masculina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="tradicionalDetalhe" data-valor="0">
+                                <figcaption>tradicional </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="tradicionalDetalhe" value="tradicionalDetalhe" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('acabamento', 'detBara')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa feminina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="frenteMaior" data-valor="1.90">
+                                <figcaption>Frente maior que as costas</figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="frenteMaior" value="frenteMaior" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('acabamento', 'detBara')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/Camisa unissex.jpg" data-bs-hover-animate="pulse" id="masc" data-target="costasMaior" data-valor="1.90">
+                                <figcaption>Costas maior que a frente</figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="costasMaior" value="costasMaior" hidden>
+                        </div>
+                    </div>
+                    <div class="row B acabamento">
+                        <div class="col-md-12">
+                            <h1 style="background-color:transparent;">Acabamento </h1></div>
+                        <div class="col-md-6" onclick="abrirCamada('extras', 'acabamento')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa masculina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="tradicionalAcabamento" data-valor="0">
+                                <figcaption>tradicional </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="tradicionalAcabamento" value="tradicionalAcabamento" hidden>
+                        </div>
+                        <div class="col-md-6" onclick="abrirCamada('extras', 'acabamento')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa feminina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="refilado" data-valor="0.50">
+                                <figcaption>Refilado </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="refilado" value="refilado" hidden>
+                        </div>
+                    </div>
+                    <div class="row B extras">
+                        <div class="col-md-12">
+                            <h1 style="background-color:transparent;">Extras </h1></div>
+                        <div class="col-md-4" onclick="abrirCamada('malha' , 'extras')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa masculina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="bolso" data-valor="0.50">
+                                <figcaption>bolso </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="bolso" value="bolso" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('malha', 'extras')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa feminina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="manga" data-valor="0.50">
+                                <figcaption>manga dobrada</figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="manga" value="manga" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('malha', 'extras')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/Camisa unissex.jpg" data-bs-hover-animate="pulse" id="masc" data-target="aberturaLateral" data-valor="0.50">
+                                <figcaption>abertura lateral na barra</figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="aberturaLateral" value="aberturaLateral" hidden>
+                        </div>
+                    </div>
+                    <div class="row B malha">
+                        <div class="col-md-12">
+                            <h1 style="background-color:transparent;">Malha </h1></div>
+                        <div class="col-md-4" onclick="abrirCamada('cores', 'malha')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa masculina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="algBasico" data-valor="0">
+                                <figcaption>algodão básico</figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="algBasico" value="algBasico" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('cores', 'malha')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa feminina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="algSoft" data-valor="1.50">
+                                <figcaption>algodão soft</figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="algSoft" value="algSoft" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('cores', 'malha')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/Camisa unissex.jpg" data-bs-hover-animate="pulse" id="masc" data-target="algPremium" data-valor="2">
+                                <figcaption>algodão premium</figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="algPremium" value="algPremium" hidden>
+                        </div>
+                    </div>
+                    <div class="row B cores">
+                        <div class="col-md-12" >
+                            <h1 style="background-color:transparent;">Cores </h1></div>
+                        <div class="col-md-4" onclick="abrirCamada('tamanhos', 'cores')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa masculina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="branco" data-valor="0">
+                                <figcaption>branco </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="branco" value="branco" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('tamanhos', 'cores')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa feminina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="preto" data-valor="0">
+                                <figcaption>preto </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="preto" value="preto" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('tamanhos', 'cores')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/Camisa unissex.jpg" data-bs-hover-animate="pulse" id="masc" data-target="azul" data-valor="0">
+                                <figcaption>azul </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="azul" value="azul" hidden>
+                        </div>
+                    </div>
+                    <div class="row B cores">
+                        <div class="col-md-4" onclick="abrirCamada('tamanhos', 'cores')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa masculina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="vermelho" data-valor="0">
+                                <figcaption>vermelho </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="vermelho" value="vermelho" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('tamanhos', 'cores')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa feminina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="amarelo" data-valor="0">
+                                <figcaption>amarelo </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="amarelo" value="amarelo" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('tamanhos', 'cores')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/Camisa unissex.jpg" data-bs-hover-animate="pulse" id="masc" data-target="verde" data-valor="0">
+                                <figcaption>verde </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="verde" value="verde" hidden>
+                        </div>
+                    </div>
+                    <div class="row B cores">
+                        <div class="col-md-4" onclick="abrirCamada('mescla', 'cores')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa masculina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="cinzaClaro" data-valor="0">
+                                <figcaption>cinza claro </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="cinzaClaro" value="cinzaClaro" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('mescla', 'cores')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa feminina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="cinzaMedio" data-valor="0">
+                                <figcaption>cinza medio </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="cinzaMedio" value="cinzaMedio" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('mescla', 'cores')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/Camisa unissex.jpg" data-bs-hover-animate="pulse" id="masc" data-target="grafite" data-valor="0">
+                                <figcaption>grafite </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="grafite" value="grafite" hidden>
+                        </div>
+                    </div>
+                    <div class="row B mescla">
+                        <div class="col-md-12">
+                            <h1 style="background-color:transparent;">Mescla </h1></div>
+                        <div class="col-md-4" onclick="abrirCamada('tamanhos', 'mescla')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa masculina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="mesclaBasica" data-valor="0">
+                                <figcaption>mescla basica </figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="mesclaBasica" value="mesclaBasica" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('tamanhos', 'mescla')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/camisa feminina.jpg" data-bs-hover-animate="pulse" id="masc" data-target="mesclaSoft" data-valor="1.50">
+                                <figcaption>mescla soft</figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="mesclaSoft" value="mesclaSoft" hidden>
+                        </div>
+                        <div class="col-md-4" onclick="abrirCamada('tamanhos', 'mescla')">
+                            <figure><img class="img-thumbnail img-responsive imagens" src="assets/img/Camisa unissex.jpg" data-bs-hover-animate="pulse" id="masc" data-target="mesclaPremium" data-valor="2">
+                                <figcaption>mescla premium</figcaption>
+                            </figure>
+                            <input type="checkbox" id="checkMasc" class="checkboxes" name="mesclaPremium" value="mesclaPremium" hidden>
+                        </div>
+                    </div>
+                    <div class="row B tamanhos">
+                        <div class="col-md-12">
+                            <h2>Pedido</h2>
+                            <p></p>
+                        </div>
+                        <div class="col-md-12">
+                            <h1 style="background-color:transparent;">Tamanhos </h1></div>
+                        <div class="row-tamanhos">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="pTamanho">P</label>
+                                    <input class="form-control input-lg form-control tamanho-input" type="number" id="pTamanho" value="0">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="pTamanho">M </label>
+                                    <input class="form-control input-lg form-control tamanho-input" type="number" id="mTamanho" value="0">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="pTamanho">G </label>
+                                    <input class="form-control input-lg form-control tamanho-input" type="number" id="gTamanho" value="0">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="pTamanho">GG </label>
+                                    <input class="form-control input-lg form-control tamanho-input" type="number" id="ggTamanho" value="0">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="pTamanho">EG </label>
+                                    <input class="form-control input-lg form-control tamanho-input" type="number" id="egTamanho" value="0">
+                                </div>
+                            </div>
+                        </div>
+                        <input class="btn btn-primary B tamanhos" type="submit"  value="Confirmar Pedido">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-animation.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

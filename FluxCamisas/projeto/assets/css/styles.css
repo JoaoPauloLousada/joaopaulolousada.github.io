@@ -1,0 +1,23 @@
+form img {
+  max-height:200px;
+}
+
+form {
+  text-align:center;
+}
+
+.form-control.input-lg.tamanho-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width:100px;
+    max-height:50px;
+}
+.B {display:none;}
+.row-tamanhos {width:80vw; max-width: 800px; margin:auto; display: flex; justify-content: center}
+.col-form {margin:35px auto; padding:20px; min-height: 500px;
+            border: 1px solid #eee; border-radius: 8px;
+            -webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+               -moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+                    box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+}
