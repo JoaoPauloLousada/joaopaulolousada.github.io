@@ -56,13 +56,21 @@ function totalPedido() {
     var egTamanho = parseInt($('#egTamanho').val());
     
     var tamanhos = pTamanho + mTamanho + gTamanho + ggTamanho + egTamanho;
-    totalPed = (tamanhos * valorPedido).toPrecision(7);
+    totalPed = (tamanhos * valorPedido).toFixed(2);
     totalPed = totalPed.replace(".", ",");
     console.log(valorPedido);
     console.log (tamanhos);
     console.log(totalPed);
-    //if(window.confirm("Valor total do pedido : R$" + totalPed.toString) == true)
-     // window.confirm("Valor total do pedido : R$" + totalPed.toPrecision(7) +"<br> Deseja confirmar pedido?");
+    
+}
+
+function valorTotal() {
+    totalPedido();
+    $('.total h4').html("R$ "+ totalPed);
+    $('.tamanhos').hide(800);
+    setTimeout(function(){
+        $('.total').show(800);    
+    },500);
 }
 
 
@@ -147,9 +155,8 @@ function tratarPedido() {
         trataPedido = trataPedido.replace(valores[i], saida[i]);
         pedido = trataPedido;
 }
-
+/*
 function isValid() {
-    totalPedido();
     
     if( confirm("Valor total do pedido : R$"+ totalPed +". Deseja confirmar pedido?") == true) {
         return true;
@@ -157,4 +164,4 @@ function isValid() {
     else {
         return false;    
     }
-}
+}*/

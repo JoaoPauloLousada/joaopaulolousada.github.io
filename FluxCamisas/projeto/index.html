@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-12 ">
                 
-                <form method="POST" onSubmit="return isValid()">
+                <form method="POST" >
                     <div class="row tipo">
                         <div class="col-md-12">
                             <h1 style="background-color:transparent;">Tipo </h1></div>
@@ -316,7 +316,13 @@
                                 </div>
                             </div>
                         </div>
-                        <input class="btn btn-primary B tamanhos" type="submit"  value="Confirmar Pedido">
+                        <button class="btn btn-primary B tamanhos" type="button" onclick="valorTotal()">Encerrar Pedido</button>
+                    </div>
+                    <div class="row B total">
+                        <h2>Valor Total do Pedido</h2>
+                        <h4></h4>
+                        <h5>Deseja confirmar o Pedido?</h5>
+                        <input type="submit" class="btn btn-primary" value="Confirmar Pedido">
                     </div>
                 </form>
             </div>
